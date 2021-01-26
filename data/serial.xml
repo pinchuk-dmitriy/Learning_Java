@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="11.0.9" class="java.beans.XMLDecoder">
+ <object class="com.company.HelpClasses.Student">
+  <void property="address">
+   <string>ozerniy</string>
+  </void>
+  <void property="course">
+   <int>3</int>
+  </void>
+  <void property="faculty">
+   <string>fit</string>
+  </void>
+  <void property="family">
+   <string>pinchuk</string>
+  </void>
+  <void property="group">
+   <int>3</int>
+  </void>
+  <void property="id">
+   <int>1</int>
+  </void>
+  <void property="name">
+   <string>dima</string>
+  </void>
+  <void property="patronymic">
+   <string>vasilevich</string>
+  </void>
+  <void property="phoneNumber">
+   <string>444995828</string>
+  </void>
+  <void property="yearOfBirth">
+   <int>2001</int>
+  </void>
+ </object>
+</java>

@@ -3,16 +3,29 @@ package com.company;
 import com.company.HelpClasses.MenuInterface;
 import com.company.HelpClasses.Student;
 
+import java.io.BufferedOutputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Scanner;
-
+import java.beans.XMLEncoder;
 
 public class Main {
     static ArrayList<Student> students = new ArrayList<Student>();
     public static void main(String[] args) {
         int commandNumber = 0;
         Scanner in = new Scanner(System.in);
+/*
+        Student newstud = new Student("Enter name: ","Enter name: ","Enter name: ",42,"Enter name: ","Enter name: ","Enter name: ",3,3);
+        Student newstud2 = new Student("Enter name: ","Enter name: ","Enter name: ",42,"Enter name: ","Enter name: ","Enter name: ",3,3);
+        System.out.println(newstud.equals(newstud2));
+        System.out.println(Objects.deepEquals(newstud2, newstud));
+        System.out.println(Objects.equals(newstud2, newstud));
+        System.out.println(newstud.equals(newstud2));
+        System.out.println(newstud == newstud2);
+*/
         while(true){
             MenuInterface.menuText();
             commandNumber = in.nextInt();
@@ -88,6 +101,15 @@ public class Main {
         Group = in.nextInt();
         Student newStudent = new Student(Name,Family,Patronymic,yearOfBirth,Address,PhoneNumber,Faculty,Course,Group);
         students.add(newStudent);
+        xmlEncoderFunction(newStudent);
+    }
+    public static void xmlEncoderFunction(Object obj){
+        try(XMLEncoder xmlEncoder = new XMLEncoder(new BufferedOutputStream(
+                new FileOutputStream("data/serial.xml")))) {
+            xmlEncoder.writeObject(obj);
+        } catch (FileNotFoundException e){
+            e.printStackTrace();
+        }
     }
 }
 
