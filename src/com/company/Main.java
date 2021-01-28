@@ -1,14 +1,16 @@
 package com.company;
 
-import com.company.HelpClasses.MenuInterface;
-import com.company.HelpClasses.Student;
+import com.company.AbstractClasses.Duck;
+import com.company.DateClasses.MallardDuck;
+import com.company.DateClasses.MenuInterface;
+import com.company.DateClasses.Student;
+import com.company.StrategyRealisation.FlyNoWay;
+import com.company.StrategyRealisation.SQueck;
 
 import java.io.BufferedOutputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
 import java.util.Scanner;
 import java.beans.XMLEncoder;
 
@@ -17,15 +19,14 @@ public class Main {
     public static void main(String[] args) {
         int commandNumber = 0;
         Scanner in = new Scanner(System.in);
-/*
-        Student newstud = new Student("Enter name: ","Enter name: ","Enter name: ",42,"Enter name: ","Enter name: ","Enter name: ",3,3);
-        Student newstud2 = new Student("Enter name: ","Enter name: ","Enter name: ",42,"Enter name: ","Enter name: ","Enter name: ",3,3);
-        System.out.println(newstud.equals(newstud2));
-        System.out.println(Objects.deepEquals(newstud2, newstud));
-        System.out.println(Objects.equals(newstud2, newstud));
-        System.out.println(newstud.equals(newstud2));
-        System.out.println(newstud == newstud2);
-*/
+        Duck mallardDuck = new MallardDuck();
+        mallardDuck.performFly();
+        mallardDuck.performQuack();
+        mallardDuck.display();
+        mallardDuck.setFlyBehavior(new FlyNoWay());
+        mallardDuck.setQuackBehavior(new SQueck());
+        mallardDuck.performFly();
+        mallardDuck.performQuack();
         while(true){
             MenuInterface.menuText();
             commandNumber = in.nextInt();

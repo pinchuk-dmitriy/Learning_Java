@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <java version="11.0.9" class="java.beans.XMLDecoder">
- <object class="com.company.HelpClasses.Student">
+ <object class="com.company.DateClasses.Student">
   <void property="address">
    <string>ozerniy</string>
   </void>
